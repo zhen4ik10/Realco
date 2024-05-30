@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>HomePage</title>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<!-- <style>body{opacity: 0;}</style> -->
+	<link rel="stylesheet" href="css/style.min.css?_v=20240531011704">
+	<link rel="shortcut icon" href="favicon.ico">
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+	<div class="wrapper">
+		<header id="header" class="header">
+			<div class="header__container">
+				<div class="header__logo">
+					<img src="img/logo.svg" alt="logo">
+				</div>
+				<div class="header__menu menu">
+					<nav class="menu__body">
+						<ul class="menu__list">
+							<li class="menu__item">
+								<a href="#!" class="menu__link">
+									Home
+								</a>
+							</li>
+							<li class="menu__item menu__item--to-sub-menu">
+								<a href="#!" class="menu__link _icon-ar-down">
+									Properties
+								</a>
+								<ul class="sub-menu">
+									<li class="sub-menu__item">
+										<a href="#!" class="sub-menu__link">Home</a>
+									</li>
+									<li class="sub-menu__item">
+										<a href="#!" class="sub-menu__link">About</a>
+									</li>
+									<li class="sub-menu__item">
+										<a href="#!" class="sub-menu__link">Contact</a>
+									</li>
+								</ul>
+							</li>
+							<li class="menu__item">
+								<a href="#!" class="menu__link">
+									About
+								</a>
+							</li>
+							<li class="menu__item">
+								<a href="#!" class="menu__link">
+									Contact
+								</a>
+							</li>
+						</ul>
+					</nav>
+				</div>
+				<form action="#" class="header__form form">
+					<button type="submit" class="form__button button _icon-search"></button>
+					<input autocomplete="off" type="text" name="form[]" data-error="Помилка" placeholder="Search" class="form__input input">
+
+				</form>
+				<div data-da=".menu__body,991,2" class="header__action">
+					<a href="#!" class="header__cart-btn _icon-cart head-content__button--border">
+						Cart
+					</a>
+					<a href="#!" class="header__find">
+						Find a property
+					</a>
+				</div>
+				<button type="button" class="header__icon icon-menu"><span></span></button>
+			</div>
+		</header>
+		<main class="page">
+			<section class="page__hero hero">
+				<div class="hero__content">
+					<div class="hero__container">
+						<div class="head-content">
+							<h4 class="head-content__label">
+								Find your dream place
+							</h4>
+							<h1 class="head-content__title head-content__title--regular">
+								Find house for your family in minutes
+							</h1>
+							<div class="head-content__text">
+								<p>
+									Aenean sodales mauris quis tellus facilisis, vel mattis magna. Interdum curabitur eget
+									aliquam elit in mauris purus.
+								</p>
+							</div>
+							<form action="#" class="hero__form form-hero">
+								<label for="" class="form-hero__label">
+									<button type="submi" class="_icon-search"></button>
+									<input autocomplete="off" type="text" name="form[]" data-error="Помилка" placeholder="Search" class="form-hero__input input">
+								</label>
+								<button type="submit" class="form-hero__button button">Find a property</button>
+							</form>
+						</div>
+					</div>
+				</div>
+				<div class="hero__image">
+					<img src="img/hero/hero.webp" alt="hero-bg">
+				</div>
+			</section>
+
+			<!-- <!-- <div class="head-content">
+    <h4 class="head-content__label">
+        Find your dream place
+    </h4>
+    <h2 class="head-content__title">
+        How it works
+    </h2>
+    <h2 class="head-content__title head-content__title--regular">
+        How it works
+    </h2>
+    <h2 class="head-content__title head-content__title--regular head-content__title--white">
+        How it works
+    </h2>
+    <div class="head-content__text">
+        <p>
+            Aenean sodales mauris quis tellus facilisis, vel mattis magna. Interdum curabitur eget aliquam elit in
+            mauris purus.
+        </p>
+    </div>
+    <div class="head-content__buttons">
+        <a href="#!" class="head-content__button head-content__button--border">
+            Explore properties
+        </a>
+        <a href="#!" class="head-content__button _icon-ar-right">
+            Contact agent
+        </a>
+    </div>
+</div>
+
+<div class="item-work">
+    <div class="item-work__icon _icon-house"></div>
+    <h3 class="item-work__title">
+        Find property
+    </h3>
+    <div class="item-work__text">
+        <p>
+            Odales mauris quis tellus facilisis, vel mattis magna interdum. Curabitur eget aliquam elit. In mauris
+            purus, auctor a eleifend non.
+        </p>
+    </div>
+</div>
+<div class="item-work item-work--none-border">
+    <div class="item-work__icon _icon-house"></div>
+    <h3 class="item-work__title">
+        Find property
+    </h3>
+    <div class="item-work__text">
+        <p>
+            Odales mauris quis tellus facilisis, vel mattis magna interdum. Curabitur eget aliquam elit. In mauris
+            purus, auctor a eleifend non.
+        </p>
+    </div>
+</div>
+
+<div class="cart-item">
+    <div class="cart-item__image">
+        <img src="img/cards/card_1.webp" alt="card_1">
+    </div>
+    <div class="cart-item__body">
+        <div class="cart-item__title">
+            <h3>
+                <a href="#!">
+                    Cozy studio in Los Angeles
+                </a>
+            </h3>
+            <span>
+                $ 1,200.00 USD
+            </span>
+        </div>
+        <address class="cart-item__local">
+            <a href="#!" class="_icon-local">
+                2263 Southlea, Los Angeles
+            </a>
+        </address>
+        <div class="cart-item__apartaments">
+            <div class="_icon-bathtub">
+                2
+            </div>
+            <div class="_icon-bed">
+                2
+            </div>
+            <div class="_icon-square_foot">
+                840 sqft
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="post-item">
+    <div class="post-item__image">
+        <img src="img/cards/card_1.webp" alt="card_1">
+    </div>
+    <div class="post-item__body">
+        <div class="post-item__date">
+            <span>
+                Trends
+            </span>
+            <div>
+                May 10, 2022
+            </div>
+        </div>
+        <h3 class="post-item__title">
+            <a href="#!">
+                The 9 best homes in New York
+            </a>
+        </h3>
+        <div class="post-item__text">
+            <p>
+                Integer tincidunt rutrum faucibus. Proin sit amet varius arcu. Aliquam vel leo augue donec.
+            </p>
+        </div>
+        <a href="#!" class="post-item__button head-content__button _icon-ar-right">
+            Read more
+        </a>
+    </div>
+</div>  -->
+
+		</main>
+		<footer class="footer">
+			<div class="footer__body">
+				<div class="footer__container footer__container--body">
+					<a href="#header" class="footer__logo"><img src="img/logo.svg" alt="logo"></a>
+					<div class="footer__item item-footer">
+						<h4 class="item-footer__title">
+							Pages
+						</h4>
+						<ul class="item-footer__list">
+							<li class="item-footer__item">
+								<a href="#!" class="item-footer__link">
+									Home
+								</a>
+							</li>
+							<li class="item-footer__item">
+								<a href="#!" class="item-footer__link">
+									About
+								</a>
+							</li>
+							<li class="item-footer__item">
+								<a href="#!" class="item-footer__link">
+									Blog
+								</a>
+							</li>
+							<li class="item-footer__item">
+								<a href="#!" class="item-footer__link">
+									Agents
+								</a>
+							</li>
+							<li class="item-footer__item">
+								<a href="#!" class="item-footer__link">
+									Contact
+								</a>
+							</li>
+							<li class="item-footer__item">
+								<a href="#!" class="item-footer__link">
+									FAQs
+								</a>
+							</li>
+							<li class="item-footer__item">
+								<a href="#!" class="item-footer__link">
+									Properties
+								</a>
+							</li>
+						</ul>
+					</div>
+					<div class="footer__item item-footer">
+						<h4 class="item-footer__title">
+							CMS Pages
+						</h4>
+						<ul class="item-footer__list">
+							<li class="item-footer__item">
+								<a href="#!" class="item-footer__link">
+									Property
+								</a>
+							</li>
+							<li class="item-footer__item">
+								<a href="#!" class="item-footer__link">
+									Property Single
+								</a>
+							</li>
+							<li class="item-footer__item">
+								<a href="#!" class="item-footer__link">
+									Blog Categories
+								</a>
+							</li>
+							<li class="item-footer__item">
+								<a href="#!" class="item-footer__link">
+									Blog Single
+								</a>
+							</li>
+							<li class="item-footer__item">
+								<a href="#!" class="item-footer__link">
+									Agent Single
+								</a>
+							</li>
+						</ul>
+					</div>
+					<div class="footer__item item-footer">
+						<h4 class="item-footer__title">
+							Utility Pages
+						</h4>
+						<ul class="item-footer__list">
+							<li class="item-footer__item">
+								<a href="#!" class="item-footer__link">
+									Style Guide
+								</a>
+							</li>
+							<li class="item-footer__item">
+								<a href="#!" class="item-footer__link">
+									Changelog
+								</a>
+							</li>
+							<li class="item-footer__item">
+								<a href="#!" class="item-footer__link">
+									Licenses
+								</a>
+							</li>
+							<li class="item-footer__item">
+								<a href="#!" class="item-footer__link">
+									404
+								</a>
+							</li>
+							<li class="item-footer__item">
+								<a href="#!" class="item-footer__link">
+									Password
+								</a>
+							</li>
+							<li class="item-footer__item">
+								<a href="#!" class="item-footer__link">
+									Search
+								</a>
+							</li>
+						</ul>
+					</div>
+					<div class="footer__item item-footer item-footer--bog-size">
+						<h4 class="item-footer__title">
+							Subscribe
+						</h4>
+						<div class="item-footer__text">
+							<p>
+								Join our newsletter to stay up to date on features and releases.
+							</p>
+						</div>
+						<form action="#" class="item-footer__form form-footer">
+							<div class="form-footer__body">
+								<input autocomplete="off" type="email" name="form[]" data-error="Помилка" placeholder="Enter your email" class="form-footer__input input">
+								<button type="submit" class="form-footer__button button">Subscribe</button>
+							</div>
+							<div class="form-footer__privacy">
+								By subscribing you agree to with our
+								<a href="#!" class="">
+									Privacy Policy
+								</a>
+							</div>
+						</form>
+
+					</div>
+				</div>
+			</div>
+			<div class="footer__bottom">
+				<div class="footer__container footer__container--bottom">
+					<div class="footer__copy">
+						© Realco by Minimal Square
+					</div>
+					<div class="footer__social">
+						<a href="#!" class="_icon-s-fc"></a>
+						<a href="#!" class="_icon-s-insta"></a>
+						<a href="#!" class="_icon-s-tw"></a>
+						<a href="#!" class="_icon-s-linkedin"></a>
+					</div>
+				</div>
+			</div>
+		</footer>
+	</div>
+	<script src="js/app.min.js?_v=20240531011704"></script>
+</body>
+
+</html>
