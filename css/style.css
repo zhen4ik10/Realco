@@ -498,8 +498,7 @@ body::-webkit-scrollbar {
   object-fit: cover;
   width: 100%
 }
-.cart-item__body,
-.post-item__body {
+.cart-item__body {
   padding: 1.5rem;
   display: flex;
   flex-direction: column;
@@ -565,13 +564,21 @@ body::-webkit-scrollbar {
 .post-item {
   border-radius: 0 0 .75rem .75rem;
   box-shadow: 0 .1875rem .1875rem rgba(0,0,0,.08);
-  border: .0625rem solid #e7e8e3
+  border: .0625rem solid #e7e8e3;
+  display: flex;
+  flex-direction: column
 }
 .post-item__image img {
   aspect-ratio: 405/266;
   -o-object-fit: cover;
   object-fit: cover;
   width: 100%
+}
+.post-item__body {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem
 }
 .post-item__date {
   display: flex;
@@ -581,6 +588,9 @@ body::-webkit-scrollbar {
   column-gap: 1rem;
   font-size: .875rem;
   line-height: 1.5
+}
+.post-item__date:not(:last-child) {
+  margin-bottom: 1rem
 }
 .post-item__date span {
   background-color: #fae8e1;
@@ -594,16 +604,31 @@ body::-webkit-scrollbar {
   font-weight: 700;
   color: #2a2c1f
 }
+.post-item__title:not(:last-child) {
+  margin-bottom: .5625rem
+}
 .post-item__title a {
   transition: all .3s ease-in-out;
   text-decoration: underline;
   text-decoration-color: transparent
 }
+.post-item__text {
+  flex-grow: 1
+}
+.post-item__text:not(:last-child) {
+  margin-bottom: 1.875rem
+}
 .post-item__text p:not(:last-child) {
   margin-bottom: .9375rem
 }
 .post-item__button {
-  align-self: flex-start
+  align-self: flex-start;
+  font-weight: 700;
+  color: #2a2c1f;
+  transition: all .3s ease-in-out
+}
+.post-item__button::before {
+  transition: all .3s ease-in-out
 }
 .header {
   position: sticky;
@@ -988,6 +1013,63 @@ body::-webkit-scrollbar {
   border-radius: .375rem;
   transition: all .3s ease-in-out
 }
+.reviews__container .head-content {
+  text-align: center
+}
+.reviews__items {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(18.125rem,1fr));
+  gap: 2rem
+}
+.item-reviews {
+  border: .0625rem solid #e7e8e3;
+  border-radius: 1rem;
+  box-shadow: 0 .125rem .25rem rgba(0,0,0,.08);
+  padding: 2.0625rem;
+  display: grid;
+  gap: 1.6875rem
+}
+.item-reviews__content {
+  display: grid;
+  gap: 1.6875rem
+}
+.item-reviews__text {
+  font-size: 1.125rem;
+  color: #2a2c1f
+}
+.item-reviews__text p {
+  line-height: 1.5;
+  margin-bottom: .625rem
+}
+.item-reviews__avthor {
+  display: flex;
+  align-items: center;
+  -webkit-column-gap: 1rem;
+  -moz-column-gap: 1rem;
+  column-gap: 1rem
+}
+.item-reviews__icon {
+  max-width: 3rem
+}
+.item-reviews__icon img {
+  aspect-ratio: 1/1;
+  -o-object-fit: cover;
+  object-fit: cover;
+  width: 100%
+}
+.item-reviews__name {
+  display: flex;
+  flex-direction: column;
+  row-gap: .125rem
+}
+.item-reviews__title {
+  color: #2a2c1f;
+  font-weight: 700;
+  line-height: 1.5
+}
+.item-reviews__label {
+  line-height: 1.5
+}
 .blog {
   background-color: #f5f5f2
 }
@@ -1269,6 +1351,12 @@ body::-webkit-scrollbar {
   .page__blog {
     padding-bottom: 8rem
   }
+  .page__reviews {
+    padding-top: 9.8125rem
+  }
+  .page__reviews {
+    padding-bottom: 8rem
+  }
   .logo-block__icon {
     -webkit-column-gap: 2rem;
     -moz-column-gap: 2rem;
@@ -1299,6 +1387,9 @@ body::-webkit-scrollbar {
   }
   .start-block__container {
     padding-bottom: 6rem
+  }
+  .reviews__container .head-content:not(:last-child) {
+    margin-bottom: 5rem
   }
   .blog__body:not(:last-child) {
     margin-bottom: 5rem
@@ -1365,6 +1456,12 @@ body::-webkit-scrollbar {
   .page__blog {
     padding-bottom: 2.5rem
   }
+  .page__reviews {
+    padding-top: 2.5rem
+  }
+  .page__reviews {
+    padding-bottom: 2.5rem
+  }
   .logo-block__icon {
     -webkit-column-gap: 1rem;
     -moz-column-gap: 1rem;
@@ -1390,6 +1487,9 @@ body::-webkit-scrollbar {
   }
   .start-block__container {
     padding-bottom: 1.875rem
+  }
+  .reviews__container .head-content:not(:last-child) {
+    margin-bottom: 2.5rem
   }
   .blog__body:not(:last-child) {
     margin-bottom: 2.5rem
@@ -1805,6 +1905,26 @@ body::-webkit-scrollbar {
       padding-bottom: calc(2.5rem + 5.5 * (100vw - 20rem)/ 61.875)
     }
   }
+  @supports (padding-top:clamp(2.5rem ,0.1363636364rem + 11.8181818182vw ,9.8125rem)) {
+    .page__reviews {
+      padding-top: clamp(2.5rem ,.1363636364rem + 11.8181818182vw ,9.8125rem)
+    }
+  }
+  @supports not (padding-top:clamp(2.5rem ,0.1363636364rem + 11.8181818182vw ,9.8125rem)) {
+    .page__reviews {
+      padding-top: calc(2.5rem + 7.3125 * (100vw - 20rem)/ 61.875)
+    }
+  }
+  @supports (padding-bottom:clamp(2.5rem ,0.7222222222rem + 8.8888888889vw ,8rem)) {
+    .page__reviews {
+      padding-bottom: clamp(2.5rem ,.7222222222rem + 8.8888888889vw ,8rem)
+    }
+  }
+  @supports not (padding-bottom:clamp(2.5rem ,0.7222222222rem + 8.8888888889vw ,8rem)) {
+    .page__reviews {
+      padding-bottom: calc(2.5rem + 5.5 * (100vw - 20rem)/ 61.875)
+    }
+  }
   @supports ((-moz-column-gap:clamp(1rem ,0.6767676768rem + 1.6161616162vw ,2rem)) or (column-gap:clamp(1rem ,0.6767676768rem + 1.6161616162vw ,2rem))) {
     .logo-block__icon {
       -webkit-column-gap: clamp(1rem ,.6767676768rem + 1.6161616162vw ,2rem);
@@ -1887,6 +2007,16 @@ body::-webkit-scrollbar {
   @supports not (padding-bottom:clamp(1.875rem ,0.5416666667rem + 6.6666666667vw ,6rem)) {
     .start-block__container {
       padding-bottom: calc(1.875rem + 4.125 * (100vw - 20rem)/ 61.875)
+    }
+  }
+  @supports (margin-bottom:clamp(2.5rem ,1.6919191919rem + 4.0404040404vw ,5rem)) {
+    .reviews__container .head-content:not(:last-child) {
+      margin-bottom: clamp(2.5rem ,1.6919191919rem + 4.0404040404vw ,5rem)
+    }
+  }
+  @supports not (margin-bottom:clamp(2.5rem ,1.6919191919rem + 4.0404040404vw ,5rem)) {
+    .reviews__container .head-content:not(:last-child) {
+      margin-bottom: calc(2.5rem + 2.5 * (100vw - 20rem)/ 61.875)
     }
   }
   @supports (margin-bottom:clamp(2.5rem ,1.6919191919rem + 4.0404040404vw ,5rem)) {
@@ -2014,6 +2144,14 @@ body::-webkit-scrollbar {
   }
   .post-item__title a:hover {
     text-decoration-color: #2a2c1f
+  }
+  .post-item__button:hover {
+    color: #cf6f49
+  }
+  .post-item__button:hover::before {
+    color: #cf6f49;
+    -webkit-transform: translateX(.3125rem);
+    transform: translateX(.3125rem)
   }
   .header__cart-btn:hover::before {
     color: #cf6f49

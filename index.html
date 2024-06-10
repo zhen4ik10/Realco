@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20240609231107">
+	<link rel="stylesheet" href="css/style.min.css?_v=20240610232112">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -595,7 +595,7 @@
 			<section class="page__reviews reviews">
 				<div class="reviews__container">
 					<div class="head-content">
-						<h2 class="head-content__title head-content__title--white">
+						<h2 class="head-content__title">
 							What customers say
 						</h2>
 						<div class="head-content__text">
@@ -604,40 +604,101 @@
 							</p>
 						</div>
 					</div>
-					<div class="rating rating_set">
-						<div class="rating__body">
-							<div class="rating__active"></div>
-							<div class="rating__items">
-								<input type="radio" class="rating__item" value="1" name="rating">
-								<input type="radio" class="rating__item" value="2" name="rating">
-								<input type="radio" class="rating__item" value="3" name="rating">
-								<input type="radio" class="rating__item" value="4" name="rating">
-								<input type="radio" class="rating__item" value="5" name="rating">
+					<div class="reviews__items">
+						<div class="reviews__item item-reviews">
+							<div data-rating data-rating-value="5" class="rating rating_set">
+								<div class="rating__body">
+								</div>
+								<div data-rating-value="5" class="rating__value"></div>
+							</div>
+							<div class="item-reviews__content">
+								<div class="item-reviews__text">
+									<p>
+										"Aliquam erat volutpat. Nulla pretium nec urna et convallis. Ut varius mi lacus,
+										nec molestie libero ultricies nec.
+										Aenean lacinia dui elit, ut gravida quam."
+									</p>
+								</div>
+								<div class="item-reviews__avthor">
+									<div class="item-reviews__icon">
+										<img src="img/rating-avatar/icon-1.webp" alt="icon-1">
+									</div>
+									<div class="item-reviews__name">
+										<h5 class="item-reviews__title">
+											Michael Webb
+										</h5>
+										<h6 class="item-reviews__label">
+											Customer
+										</h6>
+									</div>
+								</div>
 							</div>
 						</div>
-						<div class="rating__value">3.6</div>
+						<div class="reviews__item item-reviews">
+							<div data-rating data-rating-value="5" class="rating rating_set">
+								<div class="rating__body">
+								</div>
+								<div data-rating-value="5" class="rating__value"></div>
+							</div>
+							<div class="item-reviews__content">
+								<div class="item-reviews__text">
+									<p>
+										"Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
+										inceptos himenaeos. Morbi pretium iaculis
+										ultricies. Aenean in leo vitae tortor."
+									</p>
+								</div>
+								<div class="item-reviews__avthor">
+									<div class="item-reviews__icon">
+										<img src="img/rating-avatar/icon-2.webp" alt="icon-2">
+									</div>
+									<div class="tem-reviews__name">
+										<h5 class="item-reviews__title">
+											Amber Keene
+										</h5>
+										<h6 class="tem-reviews__label">
+											Customer
+										</h6>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="reviews__item item-reviews">
+							<div data-rating data-rating-value="5" class="rating rating_set">
+								<div class="rating__body">
+								</div>
+								<div class="rating__value"></div>
+							</div>
+							<div class="item-reviews__content">
+								<div class="item-reviews__text">
+									<p>
+										"Condimentum viverra orci. Pellentesque suscipit odio nisl, non ultricies purus
+										mattis eget. In placerat, lorem a
+										sodales ullamcorper, eros nibh laoreet nisl."
+									</p>
+								</div>
+								<div class="item-reviews__avthor">
+									<div class="item-reviews__icon">
+										<img src="img/rating-avatar/icon-3.webp" alt="icon-3">
+									</div>
+									<div class="tem-reviews__name">
+										<h5 class="item-reviews__title">
+											Sarah Tarleton
+										</h5>
+										<h6 class="tem-reviews__label">
+											Customer
+										</h6>
+									</div>
+								</div>
+							</div>
+						</div>
 					</div>
+
 				</div>
 			</section>
 			<section class="page__blog blog">
 				<div class="blog__container">
-					<!-- <div class="blog__body">
-						<div class="head-content">
-							<h4 class="head-content__label">
-								Blog
-							</h4>
-							<h2 class="head-content__title">
-								Latest posts
-							</h2>
-							<div class="head-content__text">
-								<p>
-									Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia
-									curae. Praesent efficitur nibh massa
-									morbi sagittis ornare dui in ornare.
-								</p>
-							</div>
-						</div>
-					</div> -->
+
 					<div data-showmore="items" class="block-show">
 						<div class="blog__body">
 							<div class="head-content">
@@ -660,10 +721,6 @@
 								<span>View</span>
 							</button>
 						</div>
-						<!-- <button hidden data-showmore-button type="button" class="block-show__more">
-							<span>View all</span>
-							<span>View</span>
-						</button> -->
 						<div data-showmore-content="1" class="block-show__content">
 							<div class="post-item">
 								<div class="post-item__image">
@@ -685,12 +742,14 @@
 									</h3>
 									<div class="post-item__text">
 										<p>
-											Integer tincidunt rutrum faucibus. Proin sit amet varius arcu. Aliquam vel
+											Integer tincidunt rutrum faucibus. Proin sit amet varius arcu. Aliquam
+											vel
 											leo augue donec.
 										</p>
 										<p>
 											Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime odit
-											pariatur rerum soluta earum minus, possimus assumenda laboriosam asperiores
+											pariatur rerum soluta earum minus, possimus assumenda laboriosam
+											asperiores
 											ut et debitis, maiores blanditiis doloremque rem veniam corporis facere
 											quidem?
 										</p>
@@ -720,7 +779,8 @@
 									</h3>
 									<div class="post-item__text">
 										<p>
-											Praesent nec felis nisl. Phasellus eget lacus a metus fringilla fermentum
+											Praesent nec felis nisl. Phasellus eget lacus a metus fringilla
+											fermentum
 											sit amet.
 										</p>
 									</div>
@@ -1123,7 +1183,7 @@
 			</div>
 		</footer>
 	</div>
-	<script src="js/app.min.js?_v=20240609231107"></script>
+	<script src="js/app.min.js?_v=20240610232112"></script>
 </body>
 
 </html>
