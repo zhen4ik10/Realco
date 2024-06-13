@@ -422,16 +422,19 @@ body::-webkit-scrollbar {
   display: flex;
   flex-direction: row-reverse;
   align-items: center;
-  gap: .5rem
+  gap: .5rem;
+  transition: all .3s ease-in-out
 }
 .head-content__button::before {
-  font-size: .5rem
+  font-size: .5rem;
+  transition: all .3s ease-in-out
 }
 .head-content__button--border {
   padding: .8125rem 1.5625rem;
   border: .0625rem solid #e7e8e3;
   border-radius: .375rem;
-  box-shadow: 0 .1875rem .1875rem rgba(0,0,0,.08)
+  box-shadow: 0 .1875rem .1875rem rgba(0,0,0,.08);
+  transition: all .3s ease-in-out
 }
 .item-work {
   display: flex;
@@ -518,7 +521,7 @@ body::-webkit-scrollbar {
 .cart-item__title h3 a {
   transition: all .3s ease-in-out;
   text-decoration: underline;
-  text-decoration-color: #fff
+  text-decoration-color: transparent
 }
 .cart-item__title span {
   font-size: 1.125rem;
@@ -528,7 +531,8 @@ body::-webkit-scrollbar {
   margin-bottom: .3125rem
 }
 .cart-item__local {
-  line-height: 1.5
+  line-height: 1.5;
+  font-style: normal
 }
 .cart-item__local a {
   display: flex;
@@ -1100,7 +1104,8 @@ body::-webkit-scrollbar {
   gap: 2.0625rem
 }
 .hero {
-  background-color: #f5f5f2
+  background-color: #f5f5f2;
+  overflow: hidden
 }
 .hero__content {
   flex: 0 0 100%;
@@ -1115,7 +1120,15 @@ body::-webkit-scrollbar {
 .hero__container .head-content {
   padding-top: 1.875rem;
   padding-bottom: 1.875rem;
-  z-index: 2
+  position: relative;
+  z-index: 10
+}
+.hero__image img {
+  max-width: 100%;
+  aspect-ratio: 720/686;
+  -o-object-fit: cover;
+  object-fit: cover;
+  height: 100%
 }
 .form-hero {
   display: flex;
@@ -1200,35 +1213,6 @@ body::-webkit-scrollbar {
   .start-block__container .head-content__btns {
     align-self: center
   }
-  .hero__content {
-    position: relative
-  }
-  .hero__content::after,
-  .hero__content::before {
-    content: "";
-    position: absolute;
-    width: 8.4375rem;
-    pointer-events: none
-  }
-  .hero__content::before {
-    top: 0;
-    left: 0;
-    height: 9.1875rem;
-    background: url(../img/hero/deco-top.svg) 0 0 no-repeat
-  }
-  .hero__content::after {
-    bottom: 0;
-    right: 0;
-    height: 8.4375rem;
-    background: url(../img/hero/deco-bottom.svg) 0 0 no-repeat
-  }
-}
-@media (min-width:29.99875em) and (min-width:47.99875em) {
-  .hero__content::after {
-    left: 50%;
-    -webkit-transform: translateX(-100%);
-    transform: translateX(-100%)
-  }
 }
 @media (min-width:47.9375em) {
   .start-block__container {
@@ -1238,30 +1222,6 @@ body::-webkit-scrollbar {
 @media (min-width:47.99875em) {
   .start-block__container .head-content__text {
     max-width: 47.8125rem
-  }
-  .hero {
-    display: flex
-  }
-  .hero__container .head-content {
-    width: 50%
-  }
-  .hero__image {
-    display: block;
-    flex: 0 0 calc((100vw - 1.875rem) * .5 + .9375rem);
-    -webkit-transform: translateX(-100%);
-    transform: translateX(-100%)
-  }
-  .hero__image img {
-    width: 100%;
-    height: 100%;
-    aspect-ratio: 720/686;
-    -o-object-fit: cover;
-    object-fit: cover
-  }
-}
-@media (min-width:47.99875em) and (min-width:81.875em) {
-  .hero__container .head-content {
-    padding-right: 5rem
   }
 }
 @media (min-width:61.99875em) {
@@ -1280,6 +1240,17 @@ body::-webkit-scrollbar {
     flex: 0 1 auto;
     max-width: 37.5rem
   }
+  .hero {
+    display: flex
+  }
+  .hero__container .head-content {
+    width: 50%
+  }
+  .hero__image {
+    flex: 0 0 50%;
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%)
+  }
 }
 @media (min-width:61.99875em) and (min-width:81.875em) {
   .comfort__container {
@@ -1287,10 +1258,8 @@ body::-webkit-scrollbar {
     -moz-column-gap: 5rem;
     column-gap: 5rem
   }
-}
-@media (min-width:79.99875em) {
-  .hero__image {
-    flex: 0 0 calc(50vw - 0 * 80rem)
+  .hero__container .head-content {
+    padding-right: 5rem
   }
 }
 @media (min-width:81.875em) {
@@ -1396,6 +1365,34 @@ body::-webkit-scrollbar {
   }
   .block-show__more:not(:last-child) {
     margin-bottom: 2.5rem
+  }
+}
+@media (min-width:83.74875em) {
+  .hero__content::after,
+  .hero__content::before {
+    content: "";
+    position: absolute;
+    width: 8.4375rem;
+    pointer-events: none
+  }
+  .hero__content::before {
+    top: 0;
+    left: 0;
+    height: 9.1875rem;
+    background: url(../img/hero/deco-top.svg) 0 0 no-repeat
+  }
+  .hero__content::after {
+    bottom: 0;
+    right: 0;
+    height: 8.4375rem;
+    background: url(../img/hero/deco-bottom.svg) 0 0 no-repeat
+  }
+}
+@media (min-width:83.74875em) and (min-width:47.99875em) {
+  .hero__content::after {
+    left: 50%;
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%)
   }
 }
 @media (max-width:30em) {
@@ -1609,6 +1606,25 @@ body::-webkit-scrollbar {
   .block-show__more {
     justify-self: end
   }
+  .hero {
+    position: relative
+  }
+  .hero__container .head-content {
+    padding-right: 0
+  }
+  .hero__image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0
+  }
+  .hero__image img {
+    aspect-ratio: 720/686;
+    -o-object-fit: cover;
+    object-fit: cover;
+    width: 100%
+  }
 }
 @media (max-width:61.9375em) {
   .menu__list {
@@ -1628,23 +1644,6 @@ body::-webkit-scrollbar {
   }
   .item-footer--bog-size {
     flex: 1 1 50%
-  }
-  .hero__container .head-content {
-    padding-right: 0
-  }
-  .hero__image {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0
-  }
-  .hero__image img {
-    aspect-ratio: 720/686;
-    -o-object-fit: cover;
-    object-fit: cover;
-    width: 100%;
-    height: 100%
   }
 }
 @media (max-width:47.9375em) {
@@ -2055,12 +2054,25 @@ body::-webkit-scrollbar {
       column-gap: calc(1.25rem + 3.75 * (100vw - 47.9375rem)/ 33.9375)
     }
   }
+  @supports (padding-right:clamp(0.9375rem ,-4.8008747698rem + 11.97053407vw ,5rem)) {
+    .hero__container .head-content {
+      padding-right: clamp(.9375rem ,-4.8008747698rem + 11.97053407vw ,5rem)
+    }
+  }
+  @supports not (padding-right:clamp(0.9375rem ,-4.8008747698rem + 11.97053407vw ,5rem)) {
+    .hero__container .head-content {
+      padding-right: calc(.9375rem + 4.0625 * (100vw - 47.9375rem)/ 33.9375)
+    }
+  }
 }
 @media (min-width:61.99875em) and (max-width:47.9375em) {
   .comfort__container {
     -webkit-column-gap: 1.25rem;
     -moz-column-gap: 1.25rem;
     column-gap: 1.25rem
+  }
+  .hero__container .head-content {
+    padding-right: .9375rem
   }
 }
 @media (min-width:47.9375em) and (max-width:81.875em) {
@@ -2091,23 +2103,6 @@ body::-webkit-scrollbar {
     }
   }
 }
-@media (min-width:47.99875em) and (min-width:47.9375em) and (max-width:81.875em) {
-  @supports (padding-right:clamp(0.9375rem ,-4.8008747698rem + 11.97053407vw ,5rem)) {
-    .hero__container .head-content {
-      padding-right: clamp(.9375rem ,-4.8008747698rem + 11.97053407vw ,5rem)
-    }
-  }
-  @supports not (padding-right:clamp(0.9375rem ,-4.8008747698rem + 11.97053407vw ,5rem)) {
-    .hero__container .head-content {
-      padding-right: calc(.9375rem + 4.0625 * (100vw - 47.9375rem)/ 33.9375)
-    }
-  }
-}
-@media (min-width:47.99875em) and (max-width:47.9375em) {
-  .hero__container .head-content {
-    padding-right: .9375rem
-  }
-}
 @media (any-hover:hover) {
   [data-rating=set] .rating__items:hover .rating__item {
     background: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMTkiIHZpZXdCb3g9IjAgMCAyMCAxOSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEwLjA5MjMgMTQuODgzNUwxNi4wNjQ3IDE4LjQ4ODJMMTQuNDc5OCAxMS42OTQzTDE5Ljc1NjMgNy4xMjMyNUwxMi44MDc5IDYuNTMzNzRMMTAuMDkyMyAwLjEyNjQ2NUw3LjM3NjY4IDYuNTMzNzRMMC40MjgyMjMgNy4xMjMyNUw1LjcwNDggMTEuNjk0M0w0LjExOTg5IDE4LjQ4ODJMMTAuMDkyMyAxNC44ODM1WiIgZmlsbD0iI0VERDE0NiIvPgo8L3N2Zz4K) 0 0/1.25rem no-repeat
@@ -2135,6 +2130,16 @@ body::-webkit-scrollbar {
   }
   .sub-menu__link:hover {
     color: #cf6f49
+  }
+  .head-content__button:hover:not(.head-content__button--border) {
+    color: #cf6f49
+  }
+  .head-content__button:hover::before {
+    -webkit-transform: translateX(.3125rem);
+    transform: translateX(.3125rem)
+  }
+  .head-content__button:hover.head-content__button--border {
+    box-shadow: none
   }
   .cart-item__title h3 a:hover {
     text-decoration-color: #2a2c1f
