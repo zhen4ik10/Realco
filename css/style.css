@@ -264,6 +264,9 @@ textarea.input {
 [data-rating=set] .rating__input {
   cursor: pointer
 }
+.menu {
+  grid-area: menu
+}
 .menu__list {
   display: flex;
   align-items: center;
@@ -625,28 +628,37 @@ body::-webkit-scrollbar {
   z-index: 50;
   background-color: #fff
 }
+.header._header-scroll {
+  position: fixed;
+  top: -100%;
+  background-color: #fff;
+  opacity: 0
+}
+.header._header-show {
+  transition: all .4s ease-in-out;
+  top: 0;
+  opacity: 1
+}
 .header__container {
-  display: flex;
+  min-height: 4.625rem;
+  display: grid;
   align-items: center;
   -webkit-column-gap: 1.5rem;
   -moz-column-gap: 1.5rem;
-  column-gap: 1.5rem;
-  min-height: 4.625rem;
-  flex-wrap: wrap;
-  row-gap: .9375rem
+  column-gap: 1.5rem
 }
 .header__logo {
-  flex-grow: 1;
   position: relative;
-  z-index: 2
+  z-index: 2;
+  grid-area: logo
 }
 .header__action {
   display: flex;
-  flex-shrink: 0;
   -webkit-column-gap: 1rem;
   -moz-column-gap: 1rem;
   column-gap: 1rem;
-  line-height: 1.5
+  line-height: 1.5;
+  grid-area: action
 }
 .header__cart-btn {
   padding: .75rem 1.3125rem;
@@ -667,12 +679,14 @@ body::-webkit-scrollbar {
   background-color: #cf6f49;
   color: #fff;
   display: flex;
+  flex-shrink: 0;
   align-items: center;
   justify-content: center;
   border-radius: .375rem;
   transition: all .3s ease-in-out
 }
 .form {
+  grid-area: form;
   position: relative;
   background-color: #fff;
   transition: all .3s ease-in-out;
@@ -1231,6 +1245,15 @@ body::-webkit-scrollbar {
     visibility: hidden;
     opacity: 0
   }
+  .header__container {
+    grid-template-areas: "logo menu form action"
+  }
+  .header__action {
+    justify-content: flex-end
+  }
+  .form {
+    justify-content: flex-end
+  }
   .logo-block__text {
     max-width: 15.1875rem
   }
@@ -1557,7 +1580,10 @@ body::-webkit-scrollbar {
     position: relative;
     width: 1.875rem;
     height: 1.125rem;
-    z-index: 5
+    z-index: 5;
+    grid-area: iconMenu;
+    grid-column: 5/6;
+    justify-self: end
   }
   .icon-menu span,
   .icon-menu::after,
@@ -1592,8 +1618,14 @@ body::-webkit-scrollbar {
     -webkit-transform: rotate(45deg);
     transform: rotate(45deg)
   }
+  .header__container {
+    grid-template-areas: "logo form iconMenu"
+  }
   .header__action {
     align-self: flex-end
+  }
+  .form {
+    justify-self: end
   }
   .footer__container {
     flex-wrap: wrap;
@@ -1670,7 +1702,11 @@ body::-webkit-scrollbar {
   .header__container {
     padding-top: .4375rem;
     padding-bottom: .4375rem;
-    justify-content: flex-end
+    row-gap: .625rem
+  }
+  .form {
+    grid-row: 2/3;
+    grid-column: span 5
   }
   .item-footer {
     flex: 0 1 40%
@@ -1746,6 +1782,11 @@ body::-webkit-scrollbar {
       -moz-column-gap: calc(.9375rem + 1.0625 * (100vw - 61.9375rem)/ 19.9375);
       column-gap: calc(.9375rem + 1.0625 * (100vw - 61.9375rem)/ 19.9375)
     }
+  }
+}
+@media (min-width:29.99875em) and (max-width:61.99875em) {
+  .form {
+    grid-column: 2/5
   }
 }
 @media (min-width:20em) and (max-width:81.875em) {
