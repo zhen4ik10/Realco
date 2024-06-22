@@ -139,6 +139,16 @@ h6 {
   font-weight: inherit;
   font-size: inherit
 }
+summary {
+  list-style: none;
+  display: list-item;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none
+}
+summary::marker {
+  content: none
+}
 .lock body {
   overflow: hidden;
   touch-action: none;
@@ -317,16 +327,6 @@ textarea.input {
 }
 .spollers__title {
   list-style: none
-}
-.spollers__titlesummary {
-  list-style: none;
-  display: list-item;
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none
-}
-.spollers__titlesummary::marker {
-  content: none
 }
 .sub-menu {
   width: 100px;
