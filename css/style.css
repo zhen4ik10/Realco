@@ -316,10 +316,18 @@ textarea.input {
   }
 }
 .spollers__title {
-  list-style: none;
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none
+  list-style: none
+}
+@supports (-webkit-overflow-scrolling:touch) {
+  .spollers__title {
+    list-style: none;
+    display: block;
+    padding: 0;
+    margin: 0;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none
+  }
 }
 .sub-menu {
   width: 100px;
