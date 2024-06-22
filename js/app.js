@@ -569,8 +569,9 @@
         }
         function menuInit() {
             if (document.querySelector(".icon-menu")) document.addEventListener("click", (function(e) {
-                if (bodyLockStatus && e.target.closest(".icon-menu")) {
+                if (bodyLockStatus && e.target.closest(".icon-menu") && e.target.closest("svg")) {
                     bodyLockToggle();
+                    document.querySelector("svg").classList.toggle("menu-open");
                     document.documentElement.classList.toggle("menu-open");
                 }
             })); else if (document.querySelector(".form__input")) {
