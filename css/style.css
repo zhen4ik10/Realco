@@ -139,14 +139,14 @@ h6 {
   font-weight: inherit;
   font-size: inherit
 }
-summary {
-  list-style: none;
+details > summary {
+  list-style: none!important;
   display: list-item;
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none
 }
-summary::marker {
+details > summary::marker {
   content: none
 }
 .lock body {
