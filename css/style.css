@@ -651,23 +651,22 @@ body::-webkit-scrollbar {
   left: 0;
   width: 100%;
   z-index: 50;
-  background-color: #fff
+  background-color: #fff;
+  padding-block: 1rem var(--pb);
+  transition: all .5s ease-in-out
 }
 .header._header-scroll {
-  position: fixed;
   top: -100%;
   background-color: #fff;
   opacity: 0;
-  transition: all .4s ease-in-out
+  transition: all .5s ease-in-out
 }
 .header._header-show {
-  transition: all .4s ease-in-out;
+  transition: all .5s ease-in-out;
   top: 0;
   opacity: 1
 }
 .header__container {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
   display: grid;
   align-items: center;
   -webkit-column-gap: 1.5rem;
@@ -1351,12 +1350,9 @@ body::-webkit-scrollbar {
 }
 .form-hero {
   display: flex;
-  -webkit-column-gap: 1rem;
-  -moz-column-gap: 1rem;
-  column-gap: 1rem
+  gap: 1rem
 }
 .form-hero__label {
-  max-width: 19.375rem;
   height: 3.25rem;
   position: relative;
   background-color: #fff;
@@ -1431,6 +1427,9 @@ body::-webkit-scrollbar {
   }
   .start-block__container .head-content__btns {
     align-self: center
+  }
+  .form-hero__label {
+    max-width: 19.375rem
   }
 }
 @media (min-width:47.9375em) {
@@ -1522,8 +1521,8 @@ body::-webkit-scrollbar {
     -moz-column-gap: 2rem;
     column-gap: 2rem
   }
-  .header__container {
-    padding-bottom: 1rem
+  .header {
+    --pb: 1rem
   }
   .footer__container {
     -webkit-column-gap: 6.25rem;
@@ -1653,8 +1652,8 @@ body::-webkit-scrollbar {
   }
 }
 @media (max-width:30em) {
-  .header__container {
-    padding-bottom: .3125rem
+  .header {
+    --pb: 0.3125rem
   }
   .start-block__container {
     --border-radius: 0.0000000625rem
@@ -1914,8 +1913,22 @@ body::-webkit-scrollbar {
   .hero {
     position: relative
   }
+  .hero__content::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,.35);
+    z-index: 2
+  }
   .hero__container .head-content {
     padding-right: 0
+  }
+  .hero__container .head-content__text,
+  .hero__container .head-content__title {
+    color: #fff
   }
   .hero__image {
     position: absolute;
@@ -2043,6 +2056,12 @@ body::-webkit-scrollbar {
     width: 100%;
     justify-content: center
   }
+  .form-hero {
+    flex-direction: column
+  }
+  .form-hero__button {
+    height: 3.25rem
+  }
 }
 @media (min-width:61.9375em) and (max-width:81.875em) {
   @supports ((-moz-column-gap:clamp(0.9375rem ,-2.3632445141rem + 5.329153605vw ,2rem)) or (column-gap:clamp(0.9375rem ,-2.3632445141rem + 5.329153605vw ,2rem))) {
@@ -2061,14 +2080,14 @@ body::-webkit-scrollbar {
   }
 }
 @media (min-width:30em) and (max-width:81.875em) {
-  @supports (padding-bottom:clamp(0.3125rem ,-0.0850903614rem + 1.3253012048vw ,1rem)) {
-    .header__container {
-      padding-bottom: clamp(.3125rem ,-.0850903614rem + 1.3253012048vw ,1rem)
+  @supports (--pb:clamp(0.3125rem ,-0.0850903614rem + 1.3253012048vw ,1rem)) {
+    .header {
+      --pb: clamp( 0.3125rem , -0.0850903614rem  +  1.3253012048vw , 1rem )
     }
   }
-  @supports not (padding-bottom:clamp(0.3125rem ,-0.0850903614rem + 1.3253012048vw ,1rem)) {
-    .header__container {
-      padding-bottom: calc(.3125rem + .6875 * (100vw - 30rem)/ 51.875)
+  @supports not (--pb:clamp(0.3125rem ,-0.0850903614rem + 1.3253012048vw ,1rem)) {
+    .header {
+      --pb: calc(0.3125rem + 0.6875 * (100vw - 30rem) / 51.875)
     }
   }
 }
