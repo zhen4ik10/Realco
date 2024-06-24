@@ -1302,6 +1302,40 @@ body::-webkit-scrollbar {
   transform: translateY(0);
   transition: .4s opacity,transform .4s,-webkit-transform .4s
 }
+.fls-preloader__text-logo {
+  font-family: Roboto,sans-serif;
+  font-size: 1.25rem
+}
+.bubble-text {
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none
+}
+.bubble-text.split-text {
+  display: inline-flex
+}
+.bubble-text .split-char {
+  font-weight: 200;
+  transition: font-weight .5s ease;
+  -webkit-animation: bubbleText .3s direction fill-mode;
+  animation: bubbleText .3s direction fill-mode
+}
+@-webkit-keyframes bubbleText {
+  0% {
+    font-weight: 200
+  }
+  100% {
+    font-weight: 700
+  }
+}
+@keyframes bubbleText {
+  0% {
+    font-weight: 200
+  }
+  100% {
+    font-weight: 700
+  }
+}
 .hero {
   background-color: #f5f5f2;
   overflow: hidden
