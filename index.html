@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20240625222635">
+	<link rel="stylesheet" href="css/style.min.css?_v=20240625224209">
 	<link rel="shortcut icon" href="favicon.ico">
 	<link rel="android-chrome-512x512" sizes="512x512" href="android-chrome-512x512.webp">
 	<link rel="android-chrome-192x192" sizes="192x192" href="android-chrome-192x192.webp">
@@ -1251,27 +1251,27 @@
 						align-items: center;
 						column-gap: 16px;
 						background-color: #CF6F49;
-						-webkit-animation: rectangle-block 1.2s 0s infinite linear alternate;
-						animation: rectangle-block 1.2s 0s infinite linear alternate;
+						-webkit-animation: rectangle-block 1s 0s infinite linear alternate;
+						animation: rectangle-block 1s 0s infinite linear alternate;
 					}
 					@-webkit-keyframes rectangle-block {
 						0% {
-							transform: scale(1);
+							transform: scale(1) translateY(0px);
 							opacity: 1;
 						}
 						100% {
-							transform: scale(1.5);
-							opacity: .4;
+							transform: scale(1.5) translateY(30%);
+							opacity: 0;
 						}
 					}
 					@keyframes rectangle-block {
 						0% {
-							transform: scale(1);
+							transform: scale(1) translateY(0px);
 							opacity: 1;
 						}
 						100% {
-							transform: scale(1.5);
-							opacity: .4;
+							transform: scale(1.5) translateY(30%);
+							opacity: 0;
 						}
 					}
 					.loading-text {
@@ -1291,33 +1291,33 @@
 					}
 					.loading-text span:nth-child(1) {
 						filter: blur(0);
-						-webkit-animation: blur-text 1s 0s infinite linear alternate;
-						animation: blur-text 1s 0s infinite linear alternate;
+						-webkit-animation: blur-text .8s 0s infinite linear alternate;
+						animation: blur-text .8s 0s infinite linear alternate;
 					}
 					.loading-text span:nth-child(2) {
 						filter: blur(0);
-						-webkit-animation: blur-text 1s .2s infinite linear alternate;
-						animation: blur-text 1s .2s infinite linear alternate;
+						-webkit-animation: blur-text .8s .15s infinite linear alternate;
+						animation: blur-text .8s .15s infinite linear alternate;
 					}
 					.loading-text span:nth-child(3) {
 						filter: blur(0);
-						-webkit-animation: blur-text 1s 0.4s infinite linear alternate;
-						animation: blur-text 1s 0.4s infinite linear alternate;
+						-webkit-animation: blur-text .8s 0.3s infinite linear alternate;
+						animation: blur-text .8s 0.3s infinite linear alternate;
 					}
 					.loading-text span:nth-child(4) {
 						filter: blur(0);
-						-webkit-animation: blur-text 1s 0.6s infinite linear alternate;
-						animation: blur-text 1s 0.6s infinite linear alternate;
+						-webkit-animation: blur-text .8s 0.45s infinite linear alternate;
+						animation: blur-text .8s 0.45s infinite linear alternate;
 					}
 					.loading-text span:nth-child(5) {
 						filter: blur(0);
-						-webkit-animation: blur-text 1s 0.8s infinite linear alternate;
-						animation: blur-text 1s 0.8s infinite linear alternate;
+						-webkit-animation: blur-text .8s 0.6s infinite linear alternate;
+						animation: blur-text .8s 0.6s infinite linear alternate;
 					}
 					.loading-text span:nth-child(6) {
 						filter: blur(0);
-						-webkit-animation: blur-text 1s 1s infinite linear alternate;
-						animation: blur-text 1s 1s infinite linear alternate;
+						-webkit-animation: blur-text .8s .75s infinite linear alternate;
+						animation: blur-text .8s .75s infinite linear alternate;
 					}
 					@-webkit-keyframes blur-text {
 						0% {
@@ -1416,7 +1416,7 @@
 						const intervalId = setInterval(() => {
 							counter >= progress ? clearInterval(intervalId) : setValueProgress(++counter);
 							counter >= 100 ? addLoadedClass() : null;
-						}, 160);
+						}, 10);
 					}
 
 					function addLoadedClass() {
@@ -1496,7 +1496,7 @@
 					}
 				</style>`;
  -->
-	<script src="js/app.min.js?_v=20240625222635"></script>
+	<script src="js/app.min.js?_v=20240625224209"></script>
 </body>
 
 </html>
