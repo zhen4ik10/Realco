@@ -647,7 +647,7 @@ body::-webkit-scrollbar {
   transition: opacity .4s ease-in,top .6s ease-in
 }
 .header._header-show {
-  transition: opacity .4s ease-in,top .6s ease-in;
+  transition: opacity .4s ease-in-out,top .6s ease-in;
   top: 0;
   opacity: 1
 }
@@ -721,26 +721,27 @@ body::-webkit-scrollbar {
   width: 4.0625rem;
   padding: .75rem .625rem .75rem .3125rem;
   border-radius: 0 .375rem .375rem 0;
-  transition: all .3s ease-in-out
+  transition: width .3s ease-in-out
 }
 .form__input::-webkit-input-placeholder {
-  -webkit-transition: all .3s ease-in-out;
-  transition: all .3s ease-in-out
+  -webkit-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out
 }
 .form__input:-ms-input-placeholder {
-  -ms-transition: all .3s ease-in-out;
-  transition: all .3s ease-in-out
+  -ms-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out
 }
 .form__input::-ms-input-placeholder {
-  -ms-transition: all .3s ease-in-out;
-  transition: all .3s ease-in-out
+  -ms-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out
 }
 .form__input::placeholder {
-  transition: all .3s ease-in-out
+  transition: all .4s ease-in-out
 }
 .form__input:focus {
   width: auto;
-  outline: .0625rem solid #e7e8e3
+  outline: .0625rem solid #e7e8e3;
+  transition: width .3s ease-in-out
 }
 .form__input:focus::-webkit-input-placeholder {
   opacity: 0
